@@ -1,0 +1,2981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mail Dingo - Inbox Message</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" class="css-link-light" href="assets/css/styles-light.css" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" class="css-link-dark" href="assets/css/styles-dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon-180x180.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Layout -->
+    <div class="layout">
+        <!-- Navigation -->
+        <div class="navigation">
+            <!-- Nav Menu -->
+            <ul class="nav nav-pills" role="tablist">
+                <!-- Toggle Compact Menu -->
+                <li class="nav-item mb-4">
+                    <a class="nav-link btn-navigation-compact border-bottom shadow-lg" href="#" title="Compact Menu">
+                        <i class="ri-menu-2-line text-primary"></i>
+                        <span class="nav-link-title ms-2 me-6">Compact Menu</span>
+                    </a>
+                </li>
+                <!-- Toggle Compact Menu -->
+    
+                <!-- Inbox -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#inbox-tab" role="tab" aria-selected="true" title="Inbox">
+                        <i class="ri-inbox-line"></i>
+                        <span class="nav-link-title ms-2"><span>Inbox</span><span class="text-muted fs-xs">254</span></span>
+                    </a>
+                </li>
+                <!-- Inbox -->
+    
+                <!-- Starred -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#starred-tab" role="tab" aria-selected="false" title="Starred">
+                        <i class="ri-star-line"></i>
+                        <span class="nav-link-title ms-2"><span>Starred</span><span class="text-muted fs-xs">16</span></span>
+                    </a>
+                </li>
+                <!-- Starred -->
+    
+                <!-- Sent -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#sent-tab" role="tab" aria-selected="false" title="Sent">
+                        <i class="ri-send-plane-2-line"></i>
+                        <span class="nav-link-title ms-2"><span>Sent</span><span class="text-muted fs-xs">8</span></span>
+                    </a>
+                </li>
+                <!-- Sent -->
+                
+                <!-- Draft -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#draft-tab" role="tab" aria-selected="false" title="Draft">
+                        <i class="ri-draft-line"></i>
+                        <span class="nav-link-title ms-2"><span>Draft</span><span class="text-muted fs-xs">12</span></span>
+                    </a>
+                </li>
+                <!-- Draft -->
+    
+                <!-- Contacts -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#contacts-tab" role="tab" aria-selected="false" title="Contacts">
+                        <i class="ri-contacts-book-line"></i>
+                        <span class="nav-link-title ms-2"><span>Contacts</span><span class="text-muted fs-xs">128</span></span>
+                    </a>
+                </li>
+                <!-- Contacts -->
+                
+                <!-- Delete -->
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-bs-toggle="pill" href="#delete-tab" role="tab" aria-selected="false" title="Delete">
+                        <i class="ri-delete-bin-line"></i>
+                        <span class="nav-link-title ms-2"><span>Delete</span><span class="text-muted fs-xs">3</span></span>
+                    </a>
+                </li>
+                <!-- Delete -->
+    
+                <!-- Collapse -->
+                <li class="nav-item border-top">
+                    <a class="nav-link" title="More" data-bs-toggle="collapse" href="#collapseMore" role="button" aria-expanded="false" aria-controls="collapseMore">
+                        <i class="ri-more-line text-success"></i>
+                        <span class="nav-link-title ms-2">
+                            <span>More</span>
+                            <span class="text-muted">
+                                <i class="ri-add-line"></i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+    
+                <div>
+                    <div class="collapse" id="collapseMore">
+                        <!-- Archive -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="pill" href="#archive-tab" role="tab" aria-selected="false" title="Archive">
+                                <i class="ri-archive-line"></i>
+                                <span class="nav-link-title ms-2"><span>Archive</span><span class="text-muted fs-xs">25</span></span>
+                            </a>
+                        </li>
+                        <!-- Archive -->
+                        
+                        <!-- Spam -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="pill" href="#spam-tab" role="tab" aria-selected="false" title="Spam">
+                                <i class="ri-spam-2-line"></i>
+                                <span class="nav-link-title ms-2"><span>Spam</span><span class="text-muted fs-xs">2</span></span>
+                            </a>
+                        </li>
+                        <!-- Spam -->
+                    </div>
+                </div>
+                <!-- Collapse -->
+                
+                <!-- Collapse -->
+                <li class="nav-item">
+                    <a class="nav-link border-top" title="Labels" data-bs-toggle="collapse" href="#collapseLabels" role="button" aria-expanded="false" aria-controls="collapseLabels">
+                        <i class="ri-bookmark-3-line text-info"></i>
+                        <span class="nav-link-title ms-2">
+                            <span>Labels</span>
+                            <span class="text-muted">
+                                <i class="ri-add-line"></i>
+                            </span>
+                        </span>
+                    </a>
+                </li>
+    
+                <div>
+                    <div class="collapse" id="collapseLabels">
+                        <!-- Add More Labels -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" title="Add More">
+                                <i class="ri-add-circle-line text-muted"></i>
+                                <span class="nav-link-title ms-2">Add More</span>
+                            </a>
+                        </li>
+                        <!-- Add More Labels -->
+    
+                        <!-- Label Work -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="pill" href="#work-tab" role="tab" aria-selected="false" title="Label Work">
+                                <svg class="text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"/>
+                                    <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span class="nav-link-title ms-2"><span>Work</span><span class="text-muted fs-xs">21</span></span>
+                            </a>
+                        </li>
+                        <!-- Label Work -->
+    
+                        <!-- Label Family -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="pill" href="#family-tab" role="tab" aria-selected="false" title="Label Family">
+                                <svg class="text-warning" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"/>
+                                    <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span class="nav-link-title ms-2"><span>Family</span><span class="text-muted fs-xs">4</span></span>
+                            </a>
+                        </li>
+                        <!-- Label Family -->
+    
+                        <!-- Label Friends -->
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" data-bs-toggle="pill" href="#friends-tab" role="tab" aria-selected="false" title="Label Friends">
+                                <svg class="text-danger" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"/>
+                                    <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span class="nav-link-title ms-2"><span>Friends</span><span class="text-muted fs-xs">19</span></span>
+                            </a>
+                        </li>
+                        <!-- Label Friends -->
+                    </div>
+                </div>
+                <!-- Collapse -->
+    
+                <!-- Switch Theme -->
+                <li class="nav-item border-top mt-auto" role="presentation">
+                    <a class="nav-link page-theme" href="#" title="Switch Theme">
+                        <i class="ri-toggle-fill"></i>
+                        <span class="nav-link-title ms-2">Switch Theme</span>
+                    </a>
+                </li>
+                <!-- Switch Theme -->
+            </ul>
+            <!-- Nav Menu -->
+        </div>
+        <!-- Navigation -->
+
+        <!-- Backdrop Layer -->
+        <div class="backdrop"></div>
+        <!-- Backdrop Layer -->
+
+        <!-- Sidebar -->
+        <div class="sidebar d-flex flex-column overflow-hidden h-100">
+            <!-- Sidebar Toolbar -->
+            <div class="sidebar-toolbar border-bottom justify-content-end px-4">
+                <!-- Dropdown -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-icon btn-primary" data-bs-toggle="modal" data-bs-target="#modalCompose">
+                        <i class="ri-edit-2-line"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#" data-bs-toggle="modal" data-bs-target="#modalCompose">Compose Mail<span class="ms-2 text-muted"><i class="ri-quill-pen-line"></i></span></a></li>
+                        <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="app-chat.html">Direct Message<span class="ms-2 text-muted"><i class="ri-chat-1-line"></i></span></a></li>
+                    </ul>
+                </div>
+                <!-- Dropdown -->
+
+                <!-- Button -->
+                <button class="d-xl-none btn-navigation-show btn btn-icon btn-sm btn-secondary border w-auto ms-2" type="button">
+                    <i class="ri-side-bar-line"></i>
+                    <span class="ms-2">Menu</span>
+                </button>
+                <!-- Button -->
+            </div>
+            <!-- Sidebar Toolbar -->
+
+            <!-- Tab Content -->
+            <div class="hide-scrollbar h-100">
+                <div class="tab-content">
+                    <!-- Inbox Tab -->
+                    <div class="tab-pane fade show active" id="inbox-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Inbox</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search inbox" aria-label="Search inbox"
+                                    aria-describedby="search-inbox-button">
+                                <span class="input-group-text" id="search-inbox-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact active mb-3">
+                                <a href="app-inbox.html" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">VB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Velma Brown</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Happy Birthday!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">As you already know, I am not the best at expressing my feelings. But since it's your birthday, I wanted to write you a letter because you deserve the most extraordinary things in life. You are a beautiful soul, kind and sweet, who always thinks of others before herself.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">EW</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Eric Wallace</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Hello my friend!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I know you have an important job interview this week, and you have been quite stressed about it. It's normal to feel scared, but don't underestimate yourself or doubt your merit. You are one of the most hardworking and dedicated people I know who always try their best.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">WN</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">William Nichols</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Hey best friend!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">A little birdie told me that you are having a rough day, so I am here to cheer you up. I know these tough times are hard to deal with, but you are a strong, kind, and magnificent person, capable of winning against all odds. Don't forget to take care of yourself and focus on your well-being. </div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MH</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Marina Hargrove</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Do not be upset!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">It's exam week, and since I know how deep you fall into studying mode, I am here to remind you to take care of yourself. No matter how important studies are, take some breaks in between to relax. Keep yourself hydrated, and by that, I mean water, not coffee.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">RH</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Robert Hickman</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">RS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Robert Sanders</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Invitation For You.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I can't believe you are 30 already. It feels like yesterday when you walked into the classroom in kindergarten, and our teacher made you sit beside me. I guess I have to thank Mrs. Palmer for bringing you into my life. Thank you for staying by my side for all these years.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">TL</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Tracy Larson</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Send You Cheers.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">If you need any help, you can always reach out to me. We can study together and make flashcards to memorize. All the best!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MR</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Monica Reeves</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Please come to visit me soon.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">There's so much we need to talk about. I need to show you all the new restaurants that have opened up in the area, and you need to tell me everything about your new place. You must have met many new people there, but you are not allowed to forget me, okay?</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">EF</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Edgar Fontaine</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Let me know if you can make it.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">You won't believe what Suzy told me the other day. I have so much gossip to share with you, and we need to plan a slumber party for it. I will prepare all the food and games. You bring your collection of movies and also your throw pillows. It's going to be so exciting and I can't wait.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JM</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">James Moeller</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Accept My Congratulations!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Congratulations on your new job! I knew you would get it and can't wait to hear everything about this job. Also, this calls for a celebration, so we will have a party. I am so incredibly excited for this new journey of yours. Keep shining!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Placeholder -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="row gx-5">
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <span class="avatar-label">--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <h6 class="placeholder-glow w-100 mb-0">
+                                                    <span class="placeholder placeholder-sm rounded-1 col-5"></span>
+                                                </h6>
+                                            </div>
+
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder placeholder-sm rounded-1 col-12"></span>
+                                                <span class="placeholder placeholder-sm rounded-1 col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeholder -->
+
+                            <!-- Placeholder -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="row gx-5">
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <span class="avatar-label">--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <h6 class="placeholder-glow w-100 mb-0">
+                                                    <span class="placeholder placeholder-sm rounded-1 col-5"></span>
+                                                </h6>
+                                            </div>
+
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder placeholder-sm rounded-1 col-12"></span>
+                                                <span class="placeholder placeholder-sm rounded-1 col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeholder -->
+                        </div>
+                    </div>
+                    <!-- Inbox Tab -->
+                    
+                    <!-- Starred Tab -->
+                    <div class="tab-pane fade" id="starred-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Starred</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search starred" aria-label="Search starred"
+                                    aria-describedby="search-starred-button">
+                                <span class="input-group-text" id="search-starred-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">FB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Frederick Brooks</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">WB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Wanda Bishop</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Invitation For You.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I can't believe you are 30 already. It feels like yesterday when you walked into the classroom in kindergarten, and our teacher made you sit beside me. I guess I have to thank Mrs. Palmer for bringing you into my life. Thank you for staying by my side for all these years.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">RD</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Ruben Depue</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Send You Cheers.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">If you need any help, you can always reach out to me. We can study together and make flashcards to memorize. All the best!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">KS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Kevin Stjohn</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Please come to visit me soon.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">There's so much we need to talk about. I need to show you all the new restaurants that have opened up in the area, and you need to tell me everything about your new place. You must have met many new people there, but you are not allowed to forget me, okay?</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MT</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Marcos Thompson</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Let me know if you can make it.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">You won't believe what Suzy told me the other day. I have so much gossip to share with you, and we need to plan a slumber party for it. I will prepare all the food and games. You bring your collection of movies and also your throw pillows. It's going to be so exciting and I can't wait.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">PM</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Pamela Morrison</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Accept My Congratulations!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Congratulations on your new job! I knew you would get it and can't wait to hear everything about this job. Also, this calls for a celebration, so we will have a party. I am so incredibly excited for this new journey of yours. Keep shining!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Placeholder -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="row gx-5">
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <span class="avatar-label">--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <h6 class="placeholder-glow w-100 mb-0">
+                                                    <span class="placeholder placeholder-sm rounded-1 col-5"></span>
+                                                </h6>
+                                            </div>
+
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder placeholder-sm rounded-1 col-12"></span>
+                                                <span class="placeholder placeholder-sm rounded-1 col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeholder -->
+                        </div>
+                    </div>
+                    <!-- Starred Tab -->
+                    
+                    <!-- Sent Tab -->
+                    <div class="tab-pane fade" id="sent-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Sent</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search sent" aria-label="Search sent"
+                                    aria-describedby="search-sent-button">
+                                <span class="input-group-text" id="search-sent-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Jackie Coulter</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Happy Birthday!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">A little birdie told me that you are having a rough day, so I am here to cheer you up. I know these tough times are hard to deal with, but you are a strong, kind, and magnificent person, capable of winning against all odds. Don't forget to take care of yourself and focus on your well-being.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">CM</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Cheryl Maggard</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Hello my friend!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I know you have an important job interview this week, and you have been quite stressed about it. It's normal to feel scared, but don't underestimate yourself or doubt your merit. You are one of the most hardworking and dedicated people I know who always try their best.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">RC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Randi Campbell</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Hey best friend!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">As you already know, I am not the best at expressing my feelings. But since it's your birthday, I wanted to write you a letter because you deserve the most extraordinary things in life. You are a beautiful soul, kind and sweet, who always thinks of others before herself.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">GL</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Garrett Llewellyn</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Do not be upset!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">It's exam week, and since I know how deep you fall into studying mode, I am here to remind you to take care of yourself. No matter how important studies are, take some breaks in between to relax. Keep yourself hydrated, and by that, I mean water, not coffee.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">TB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Theresa Braun</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">DF</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Dottie Ferreira</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Invitation For You.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I can't believe you are 30 already. It feels like yesterday when you walked into the classroom in kindergarten, and our teacher made you sit beside me. I guess I have to thank Mrs. Palmer for bringing you into my life. Thank you for staying by my side for all these years.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Sent Tab -->
+                    
+                    <!-- Draft Tab -->
+                    <div class="tab-pane fade" id="draft-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Draft</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search draft" aria-label="Search draft"
+                                    aria-describedby="search-draft-button">
+                                <span class="input-group-text" id="search-draft-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="app-draft.html" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">IB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Irma Bartee</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Do not be upset!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">It's exam week, and since I know how deep you fall into studying mode, I am here to remind you to take care of yourself. No matter how important studies are, take some breaks in between to relax. Keep yourself hydrated, and by that, I mean water, not coffee.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">RB</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Roy Batiste</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Draft Tab -->
+
+                    <!-- Contacts Tab -->
+                    <div class="tab-pane fade" id="contacts-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="mb-0">Contacts</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4 mb-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search contacts" aria-label="Search contacts"
+                                    aria-describedby="search-contacts-button">
+                                <span class="input-group-text" id="search-contacts-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="app-chat.html" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">CS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Chris Solomon</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    As you already know, I am not the best at expressing my feelings. But since it's your birthday.
+                                                </div>
+                                                <span class="badge rounded-pill bg-primary ms-4">4</span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">KS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Kelly Smith</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    You are a beautiful soul, kind and sweet, who always thinks of others before herself.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">DG</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Donald Graves</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    Your selflessness and innocence inspire me to become a better person every day.
+                                                </div>
+                                                <span class="badge rounded-pill bg-primary ms-4">3</span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">DR</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Deborah Redd</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    If Spring were a person, it would be you. I don't know what I would do without you.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Joe Stoner</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    Thank you for having my back, for accepting me the way I am, for never sugar-coating your words, and for loving me.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Maurice Coleman</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    Your parents even took us to the movies and bought us so much popcorn and cola.
+                                                </div>
+                                                <span class="badge rounded-pill bg-primary ms-4">1</span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">KC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Katherine Cassidy</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    There is never a dull moment with you. We have made so many memories together, and I hope we get to make more.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JP</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="text-truncate mb-0 me-auto">Jerry Pratter</h6>
+                                                <span class="fs-xs text-muted text-nowrap ms-4">9:36 AM</span>
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp me-auto">
+                                                    You are one of the most hardworking and dedicated people I know who always try their best.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Contacts Tab -->
+                    
+                    <!-- Delete Tab -->
+                    <div class="tab-pane fade" id="delete-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Delete</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search delete" aria-label="Search delete"
+                                    aria-describedby="search-delete-button">
+                                <span class="input-group-text" id="search-delete-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JP</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">John Powell</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Jamie Cunningham</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Invitation For You.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">I can't believe you are 30 already. It feels like yesterday when you walked into the classroom in kindergarten, and our teacher made you sit beside me. I guess I have to thank Mrs. Palmer for bringing you into my life. Thank you for staying by my side for all these years.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">FA</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Fred Arnold</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Send You Cheers.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">If you need any help, you can always reach out to me. We can study together and make flashcards to memorize. All the best!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Delete Tab -->
+
+                    <!-- Archive Tab -->
+                    <div class="tab-pane fade" id="archive-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">Archive</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search archive" aria-label="Search archive"
+                                    aria-describedby="search-archive-button">
+                                <span class="input-group-text" id="search-archive-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Martha Smith</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Hey best friend!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">A little birdie told me that you are having a rough day, so I am here to cheer you up. I know these tough times are hard to deal with, but you are a strong, kind, and magnificent person, capable of winning against all odds. Don't forget to take care of yourself and focus on your well-being. </div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">DE</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Don Esquibel</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Do not be upset!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">It's exam week, and since I know how deep you fall into studying mode, I am here to remind you to take care of yourself. No matter how important studies are, take some breaks in between to relax. Keep yourself hydrated, and by that, I mean water, not coffee.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">SC</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Sidney Cline</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Open when you need a laugh</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Is the new city giving you a hard time? Well, take a break and join me on a ride down memory lane. First stop, fifth-grade recess. Remember when I was trying to ride the swing and accidentally face-planted on the ground? I think my nose still hurts, but it sure gave you a good laugh then. It was also the day we became friends.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Archive Tab -->
+
+                    <!-- Spam Tab -->
+                    <div class="tab-pane fade" id="spam-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="mb-0">Spam</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4 mb-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search spam" aria-label="Search spam"
+                                    aria-describedby="search-spam-button">
+                                <span class="input-group-text" id="search-spam-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <!-- Toolbar -->
+                        <div class="sidebar-toolbar border-bottom justify-content-end px-2">
+                            <button type="button" class="btn btn-link">Delete all messages with spam</button>
+                        </div>
+                        <!-- Toolbar -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">MS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Mcafee Support</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Your Antivirus Has Expired</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Your device is at risk! Last reminder: Your antivirus expires today! Mcafee Support</div>
+                                                <span class="text-danger ms-2">
+                                                    <i class="ri-delete-bin-5-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">ET</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Enence Translator</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Why This Gadget Is So Special!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Language barrier should no longer be your concern anymore! Enence Translator</div>
+                                                <span class="text-danger ms-2">
+                                                    <i class="ri-delete-bin-5-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Spam Tab -->
+
+                    <!-- Work Tab -->
+                    <div class="tab-pane fade" id="work-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">#Work</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search in #Work" aria-label="Search in Work"
+                                    aria-describedby="search-work-button">
+                                <span class="input-group-text" id="search-work-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JL</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Jonathon Luther</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Please come to visit me soon.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">There's so much we need to talk about. I need to show you all the new restaurants that have opened up in the area, and you need to tell me everything about your new place. You must have met many new people there, but you are not allowed to forget me, okay?</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">CS</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Cheryl Shea</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Let me know if you can make it.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">You won't believe what Suzy told me the other day. I have so much gossip to share with you, and we need to plan a slumber party for it. I will prepare all the food and games. You bring your collection of movies and also your throw pillows. It's going to be so exciting and I can't wait.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">ME</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Merideth Ewart</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Accept My Congratulations!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Congratulations on your new job! I knew you would get it and can't wait to hear everything about this job. Also, this calls for a celebration, so we will have a party. I am so incredibly excited for this new journey of yours. Keep shining!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Placeholder -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="row gx-5">
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <span class="avatar-label">--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <h6 class="placeholder-glow w-100 mb-0">
+                                                    <span class="placeholder placeholder-sm rounded-1 col-5"></span>
+                                                </h6>
+                                            </div>
+
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder placeholder-sm rounded-1 col-12"></span>
+                                                <span class="placeholder placeholder-sm rounded-1 col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeholder -->
+                        </div>
+                    </div>
+                    <!-- Work Tab -->
+
+                    <!-- Family Tab -->
+                    <div class="tab-pane fade" id="family-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">#Family</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search in #Family" aria-label="Search in Family"
+                                    aria-describedby="search-family-button">
+                                <span class="input-group-text" id="search-family-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JJ</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">James Johnson</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Let me know if you can make it.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">You won't believe what Suzy told me the other day. I have so much gossip to share with you, and we need to plan a slumber party for it. I will prepare all the food and games. You bring your collection of movies and also your throw pillows. It's going to be so exciting and I can't wait.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JW</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Joseph Wright</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Accept My Congratulations!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Congratulations on your new job! I knew you would get it and can't wait to hear everything about this job. Also, this calls for a celebration, so we will have a party. I am so incredibly excited for this new journey of yours. Keep shining!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Placeholder -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="row gx-5">
+                                        <div class="col-auto">
+                                            <div class="avatar">
+                                                <span class="avatar-label">--</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <h6 class="placeholder-glow w-100 mb-0">
+                                                    <span class="placeholder placeholder-sm rounded-1 col-5"></span>
+                                                </h6>
+                                            </div>
+
+                                            <div class="placeholder-glow">
+                                                <span class="placeholder placeholder-sm rounded-1 col-12"></span>
+                                                <span class="placeholder placeholder-sm rounded-1 col-8"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Placeholder -->
+                        </div>
+                    </div>
+                    <!-- Family Tab -->
+                    
+                    <!-- Friends Tab -->
+                    <div class="tab-pane fade" id="friends-tab" role="tabpanel">
+                        <!-- Tab Header -->
+                        <div class="d-flex align-items-center justify-content-between m-4">
+                            <!-- Heading -->
+                            <h4 class="m-0">#Friends</h4>
+                            <!-- Heading -->
+
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light dropdown-toggle px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Newest
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                        Newest
+                                        <i class="ri-check-line text-primary ms-2"></i>
+                                    </a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Newest Unreplied</a></li>
+                                    <li><a class="dropdown-item" href="#">Oldest Unreplied</a></li>
+                                </ul>
+                            </div>
+                            <!-- Dropdown -->
+                        </div>
+                        <!-- Tab Header -->
+                        
+                        <!-- Search Input -->
+                        <div class="m-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search in #Friends" aria-label="Search in Friends"
+                                    aria-describedby="search-friends-button">
+                                <span class="input-group-text" id="search-friends-button" type="button">
+                                    <i class="ri-equalizer-line"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Search Input -->
+                        
+                        <div class="m-4">
+                            <!-- Card -->
+                            <div class="card card-contact mb-3">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">AW</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Alexander Wolfe</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4">9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Let me know if you can make it.</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">You won't believe what Suzy told me the other day. I have so much gossip to share with you, and we need to plan a slumber party for it. I will prepare all the food and games. You bring your collection of movies and also your throw pillows. It's going to be so exciting and I can't wait.</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-fill"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card card-contact">
+                                <a href="#" class="card-link"></a>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start">
+                                        <!-- Avatar -->
+                                        <div class="avatar me-4">
+                                            <span class="avatar-label">JD</span>
+                                        </div>
+                                        <!-- Avatar -->
+
+                                        <!-- Content -->
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="fw-normal text-truncate mb-0 me-auto">Jenneth Dubuque</h6>
+                                                <div class="d-flex align-items-center text-muted text-nowrap fs-xs ms-4"><span class="fs-md me-2"><i class="ri-attachment-2"></i></span>9:36 AM</div>
+                                            </div>
+                                            <h6 class="text-truncate mb-1">Accept My Congratulations!</h6>
+                                            <div class="d-flex align-items-end">
+                                                <div class="line-clamp text-muted fs-md me-auto">Congratulations on your new job! I knew you would get it and can't wait to hear everything about this job. Also, this calls for a celebration, so we will have a party. I am so incredibly excited for this new journey of yours. Keep shining!</div>
+                                                <span class="text-warning ms-2">
+                                                    <i class="ri-star-line"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    </div>
+                    <!-- Friends Tab -->
+                </div>
+            </div>
+            <!-- Tab Content -->
+        </div>
+        <!-- Sidebar -->
+        
+        <!-- Main -->
+        <div class="main main-visible overflow-hidden">
+            <!-- Toolbar -->
+            <div class="main-toolbar border-bottom px-4 py-2">
+                <div class="row g-4">
+                    <div class="col">
+                        <!-- Hide Main Button -->
+                        <button class="btn-main-hide btn btn-sm btn-icon btn-base d-flex d-xl-none" type="button" title="Back to message list">
+                            <i class="ri-arrow-left-line"></i>
+                        </button>
+                        <!-- Hide Main Button -->
+                    </div>
+                    <div class="col-auto" role="tablist">
+                        <!-- Button -->
+                        <a href="documentation.html" class="btn btn-sm btn-icon btn-base" role="button" title="Get Help">
+                            <i class="ri-question-line"></i>
+                        </a>
+                        <!-- Button -->
+                        
+                        <!-- Button -->
+                        <a href="app-settings.html" class="btn btn-sm btn-icon btn-base" role="button" title="Settings">
+                            <i class="ri-settings-5-line"></i>
+                        </a>
+                        <!-- Button -->
+                        
+                        <!-- Button -->
+                        <button class="btn btn-sm btn-icon btn-base me-1" type="button" title="Apps">
+                            <i class="ri-function-line"></i>
+                        </button>
+                        <!-- Button -->
+                        
+                        <!-- Avatar -->
+                        <div class="dropdown profile-dropdown d-inline-block ms-4">                            
+                            <div class="avatar avatar-sm" title="Profile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="avatar-label">JD</span>
+                            </div>
+                            <ul class="dropdown-menu shadow-lg p-0">
+                                <li>
+                                    <div class="d-flex align-items-center border-bottom p-4">
+                                        <div class="avatar avatar-lg me-4" title="Profile">
+                                            <span class="avatar-label fs-2">
+                                                <i class="ri-at-fill"></i>
+                                            </span>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="fs-md mb-n1">John Davis</h6>
+                                            <span class="text-muted fs-sm">john@mail.com</span>
+                                            <span class="badge bg-success">Online</span>
+                                        </div>
+                                    </div>    
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-center justify-content-center p-4">
+                                        <button type="button" class="btn btn-sm btn-secondary d-flex align-items-center me-2"><i class="ri-profile-line me-1"></i>Profile</button>
+                                        <a href="account-signin.html" role="button" class="btn btn-sm btn-primary d-flex align-items-center"><i class="ri-logout-circle-r-line me-1"></i>Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Avatar -->
+                    </div>
+                </div>                
+            </div>
+            <!-- Toolbar -->
+
+            <!-- Main Body -->
+            <div class="main-body">
+                <!-- Main Header -->
+                <div class="main-header border-bottom p-3">
+                    <div class="row g-3">
+                        <div class="col-auto">
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Send to Archive">
+                                <i class="ri-archive-line"></i>
+                            </button>
+                            <!-- Button -->
+
+                            <!-- Button -->                          
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Send to Spam!">
+                                <i class="ri-spam-2-line"></i>
+                            </button>
+                            <!-- Button -->
+
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Send to Recycle Bin">
+                                <i class="ri-delete-bin-5-line"></i>
+                            </button>
+                            <!-- Button -->
+
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Mark as Unread">
+                                <i class="ri-mail-unread-line"></i>
+                            </button>
+                            <!-- Button -->
+
+                            <!-- Button -->
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Mail Send To" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-mail-send-line"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Send to Inbox<i class="ri-inbox-line text-primary ms-2"></i></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Send to Sent<i class="ri-send-plane-2-line text-primary ms-2"></i></a></li>
+                                    <li><div class="dropdown-divider"></div></li>
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Send to Spam!<i class="ri-spam-2-line text-primary ms-2"></i></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Send to Recycle<i class="ri-delete-bin-5-line text-primary ms-2"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Button -->
+
+                            <!-- Button -->
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Set Label" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="ri-price-tag-3-line"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                            Send to Work
+                                            <svg class="text-success ms-2" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
+                                                <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"></rect>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                            Send to Family
+                                            <svg class="text-warning ms-2" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
+                                                <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"></rect>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                                            Send to Friends
+                                            <svg class="text-danger ms-2" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="24" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
+                                                <rect x="1" y="1" width="22" height="22" rx="7" stroke="currentColor" stroke-width="2"></rect>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Button -->
+                        </div>
+
+                        <div class="col text-sm-end">
+                            <!-- Pagination -->
+                            <div class="d-inline-flex align-items-center">
+                                <button class="btn btn-sm btn-icon btn-base me-1" type="button" title="Previous">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </button>
+
+                                <span class="text-nowrap fs-sm">1 of 254</span>
+                                
+                                <button class="btn btn-sm btn-icon btn-base ms-1" type="button" title="Next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </button>
+                            </div>
+                            <!-- Pagination -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Header -->
+
+                <!-- Main Content -->
+                <div class="main-content hide-scrollbar p-3 p-lg-10">
+                    <div class="container-fluid">
+                        <div class="row align-items-center g-3">
+                            <div class="col-auto">
+                                <div class="d-flex align-items-center">
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-sm me-3">
+                                        <span class="avatar-label">VB</span>
+                                    </div>
+                                    <!-- Avatar -->
+
+                                    <!-- Content -->
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-truncate fs-sm fw-medium mb-n1">Velma Brown</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-truncate text-muted fs-sm">velma@mail.com</span>
+                                        </div>
+                                    </div>
+                                    <!-- Content -->
+                                </div>
+                            </div>
+
+                            <div class="col text-sm-end text-nowrap">
+                                <span class="fs-sm">10:45 <span class="text-muted">(25 min ago)</span></span>
+                            </div>
+                        </div>
+
+                        <div class="row mt-6">
+                            <div class="col">
+                                <h4 class="mb-5">Accept my congratulations!</h4>
+                                <p>As you already know, I am not the best at expressing my feelings. But since it's your birthday, I wanted to write
+                                you a letter because you deserve the most extraordinary things in life. You are a beautiful soul, kind and sweet,
+                                who always thinks of others before herself.</p>
+                                <p>Your selflessness and innocence inspire me to become a better person
+                                every day. If Spring were a person, it would be you. I don't know what I would do without you. Thank you for having
+                                my back, for accepting me the way I am, for never sugar-coating your words, and for loving me. I promise I will do
+                                the same.</p>
+                                <p>Cheers to our special friendship, and here's to more!</p>
+                                <p>Love you, always.</p>
+                                <p>Velma Brown</p>
+                            </div>
+                        </div>
+
+                        <form class="row mb-3">
+                            <div class="col">
+                                <div class="input-group-custom d-flex flex-column">
+                                    <!-- Form Top Toolbar -->
+                                    <div class="form-toolbar form-toolbar-top row g-2 align-items-center p-2">
+                                        <div class="col-auto">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-icon btn-base border">
+                                                            <i class="ri-reply-line"></i>
+                                                        </button>
+                                                        <button type="button" class="btn btn-sm btn-base border dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <span class="visually-hidden">Toggle Dropdown</span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Reply<span class="ms-2 text-muted"><i class="ri-reply-line"></i></span></a></li>
+                                                            <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Forward<span class="ms-2 text-muted"><i class="ri-share-forward-line"></i></span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item me-2">To:</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm">
+                                            <input type="email" class="form-custom form-custom-address w-100" placeholder="velma@mail.com">
+                                        </div>
+                                        <div class="col-auto">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <!-- Button -->
+                                                    <button class="btn btn-sm btn-base border" type="button">
+                                                        Cc Bcc
+                                                    </button>
+                                                    <!-- Button -->
+                                                    
+                                                    <!-- Button -->
+                                                    <button class="btn btn-sm btn-base btn-icon" type="button" title="Open in new window">
+                                                        <i class="ri-aspect-ratio-line"></i>
+                                                    </button>
+                                                    <!-- Button -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Form Top Toolbar -->
+
+                                    <!-- Form Editor Toolbar -->
+                                    <div class="form-toolbar form-toolbar-middle d-flex flex-row border-top p-2">
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Undo">
+                                                    <i class="ri-arrow-go-back-line"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Redo">
+                                                    <i class="ri-arrow-go-forward-line"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-base border">
+                                                        Sans-Serif
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-base border dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Sans-Serif</a></li>
+                                                        <li><a class="dropdown-item" href="#">Monospace</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Font Size">
+                                                    <i class="ri-font-size-2"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Bold">
+                                                    <i class="ri-bold"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Italic">
+                                                    <i class="ri-italic"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Underline">
+                                                    <i class="ri-underline"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Strikethrough">
+                                                    <i class="ri-strikethrough"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Ordered List">
+                                                    <i class="ri-list-ordered"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Unordered List">
+                                                    <i class="ri-list-unordered"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Indent Decrease">
+                                                    <i class="ri-indent-decrease"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Indent Increase">
+                                                    <i class="ri-indent-increase"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Clear Formating">
+                                                    <i class="ri-format-clear"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Form Editor Toolbar -->
+
+                                    <!-- Form Textarea -->
+                                    <textarea class="form-custom form-custom-textarea" rows="5"></textarea>
+                                    <!-- Form Textarea -->
+
+                                    <!-- Form Bottom Toolbar -->
+                                    <div class="form-toolbar form-toolbar-bottom row justify-content-between g-2 p-2">
+                                        <div class="col">
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-primary me-2" type="submit">
+                                                Send
+                                            </button>
+                                            <!-- Button -->
+
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Attachment">
+                                                <i class="ri-attachment-2"></i>
+                                            </button>
+                                            <!-- Button -->
+                                            
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Link">
+                                                <i class="ri-link"></i>
+                                            </button>
+                                            <!-- Button -->
+                                            
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Image">
+                                                <i class="ri-image-2-line"></i>
+                                            </button>
+                                            <!-- Button -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Delete Draft">
+                                                <i class="ri-delete-bin-5-line"></i>
+                                            </button>
+                                            <!-- Button -->
+                                        </div>
+                                    </div>                                        
+                                    <!-- Form Bottom Toolbar -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Main Content -->
+
+                <!-- Main Footer -->
+                <div class="main-footer border-top p-3">
+                    <div class="row align-items-center g-3">
+                        <div class="col-auto">
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Reply">
+                                <i class="ri-reply-line"></i>
+                            </button>
+                            <!-- Button -->
+
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Reply All">
+                                <i class="ri-reply-all-line"></i>
+                            </button>
+                            <!-- Button -->
+                            
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Forward">
+                                <i class="ri-share-forward-line"></i>
+                            </button>
+                            <!-- Button -->
+                            
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-icon btn-base" type="button" title="Print">
+                                <i class="ri-printer-line"></i>
+                            </button>
+                            <!-- Button -->
+                        </div>
+
+                        <div class="col text-sm-end text-nowrap">
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-base border d-inline-flex align-items-center me-2" type="button" title="Send to Starred">
+                                <i class="ri-star-line me-2"></i>
+                                Starred
+                            </button>
+                            <!-- Button -->
+                            
+                            <!-- Button -->
+                            <button class="btn btn-sm btn-base border d-inline-flex align-items-center" type="button" title="Send to Recycle">
+                                <i class="ri-delete-bin-5-line me-2"></i>
+                                Delete
+                            </button>
+                            <!-- Button -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Footer -->
+            </div>
+            <!-- Main Body -->
+        </div>
+        <!-- Main -->
+
+        <!-- Modal Compose Mail -->
+        <div class="modal modal-lg fade" id="modalCompose" tabindex="-1" aria-labelledby="modalComposeLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header p-2">
+                        <h5 class="modal-title" id="modalComposeLabel">New Message</h5>
+                        <button type="button" class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0 overflow-hidden">
+                        <form class="row">
+                            <div class="col">
+                                <div class="input-group-custom shadow-0 rounded-0 border-0 d-flex flex-column">
+                                    <!-- Form Recipients Toolbar -->
+                                    <div class="form-toolbar form-toolbar-top row g-2 align-items-center border-bottom p-2">
+                                        <div class="col-auto">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item me-2">Recipients:</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-sm">
+                                            <input type="email" class="form-custom form-custom-address w-100" placeholder="">
+                                        </div>
+                                        <div class="col-auto">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item">
+                                                    <!-- Button -->
+                                                    <button class="btn btn-sm btn-base border" type="button">
+                                                        Cc Bcc
+                                                    </button>
+                                                    <!-- Button -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- Form Recipients Toolbar -->
+                                    
+                                    <!-- Form Subject Toolbar -->
+                                    <div class="form-toolbar form-toolbar-top row g-2 align-items-center p-2">
+                                        <div class="col-auto">
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item me-2">Subject:</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <input type="email" class="form-custom form-custom-address w-100" placeholder="">
+                                        </div>
+                                    </div>
+                                    <!-- Form Subject Toolbar -->
+
+                                    <!-- Form Editor Toolbar -->
+                                    <div class="form-toolbar form-toolbar-middle d-flex flex-row border-top p-2">
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Undo">
+                                                    <i class="ri-arrow-go-back-line"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Redo">
+                                                    <i class="ri-arrow-go-forward-line"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-sm btn-base border">
+                                                        Sans-Serif
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-base border dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Sans-Serif</a></li>
+                                                        <li><a class="dropdown-item" href="#">Monospace</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Font Size">
+                                                    <i class="ri-font-size-2"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Bold">
+                                                    <i class="ri-bold"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Italic">
+                                                    <i class="ri-italic"></i>
+                                                </button>
+                                                <!-- Button -->
+
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Underline">
+                                                    <i class="ri-underline"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Strikethrough">
+                                                    <i class="ri-strikethrough"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Ordered List">
+                                                    <i class="ri-list-ordered"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Unordered List">
+                                                    <i class="ri-list-unordered"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Indent Decrease">
+                                                    <i class="ri-indent-decrease"></i>
+                                                </button>
+                                                <!-- Button -->
+                                                
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Indent Increase">
+                                                    <i class="ri-indent-increase"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+
+                                            <li class="list-inline-item">
+                                                <!-- Button -->
+                                                <button class="btn btn-sm btn-icon btn-base" type="button" title="Clear Formating">
+                                                    <i class="ri-format-clear"></i>
+                                                </button>
+                                                <!-- Button -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Form Editor Toolbar -->
+
+                                    <!-- Form Textarea -->
+                                    <textarea class="form-custom form-custom-textarea m-0" rows="6"></textarea>
+                                    <!-- Form Textarea -->
+
+                                    <!-- Form Bottom Toolbar -->
+                                    <div class="form-toolbar form-toolbar-bottom row justify-content-between g-2 p-2">
+                                        <div class="col">
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-primary me-2" type="submit">
+                                                Send
+                                            </button>
+                                            <!-- Button -->
+
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Attachment">
+                                                <i class="ri-attachment-2"></i>
+                                            </button>
+                                            <!-- Button -->
+                                            
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Link">
+                                                <i class="ri-link"></i>
+                                            </button>
+                                            <!-- Button -->
+                                            
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Image">
+                                                <i class="ri-image-2-line"></i>
+                                            </button>
+                                            <!-- Button -->
+                                        </div>
+                                        <div class="col-auto">
+                                            <!-- Button -->
+                                            <button class="btn btn-sm btn-base btn-icon" type="button" title="Delete Draft">
+                                                <i class="ri-delete-bin-5-line"></i>
+                                            </button>
+                                            <!-- Button -->
+                                        </div>
+                                    </div>                                        
+                                    <!-- Form Bottom Toolbar -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Compose Mail -->
+    </div>
+    <!-- Layout -->
+
+    <!-- Scripts -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.bundle.js"></script>
+    <!-- Scripts -->
+</body>
+
+</html>
